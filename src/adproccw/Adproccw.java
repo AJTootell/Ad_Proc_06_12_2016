@@ -28,13 +28,31 @@ public class Adproccw {
         return totalCost;
     }
     public void validateAndAdd(String depth, String length, String height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, String cardGrade) {
+        //THIS FUNCTION FOR TRYING TO ADD A BOX TO THE ARRAY, WILL GIVE ERROR MESSAGES
         int givedepth = 0;
         int givelength = 0;
         int giveheight = 0;
         int givecardGrade = 0;
-        
-        
-        
+        try {
+            givedepth = Integer.parseInt(depth);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            givelength = Integer.parseInt(length);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            giveheight = Integer.parseInt(height);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            givecardGrade = Integer.parseInt(cardGrade);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
         addBoxToArray(givedepth, givelength, giveheight, colour, reinforcedBottom, reinforcedCorners, givecardGrade);
     }
     public void addBoxToArray(int depth, int length, int height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, int cardGrade) {

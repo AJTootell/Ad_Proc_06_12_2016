@@ -33,6 +33,7 @@ public class BoxType4 extends BasicBox {
         double area = super.depth * super.length * 2 + super.depth * super.height * 2 + super.length * super.height * 2;
         area = area / 1000000;
         cost = area * cardGradeCost;
-        return cost * (1 + 0.16 + 0.14 + sealableTopPercentage);
+        cost = cost * (1 + 0.16 + 0.14 + sealableTopPercentage);
+        return cost * super.quantity;
     }
 }

@@ -15,6 +15,7 @@ public abstract class BasicBox {
     int height;
     int cardGrade;
     boolean sealableTop;
+    int quantity;
     
     
     public BasicBox() {
