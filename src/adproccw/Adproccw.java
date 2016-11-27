@@ -18,7 +18,7 @@ public class Adproccw {
 
 
     public static void main(String[] args) {
-
+        UserInterface menu = new UserInterface();
     }
 
     //for every collection of boxes in the OrderBox array total the prices
