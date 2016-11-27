@@ -13,7 +13,9 @@ import java.util.ArrayList;
  */
 public class Adproccw {
 
+
     ArrayList<BasicBox> OrderBox = new ArrayList();
+
 
     public static void main(String[] args) {
 
@@ -31,14 +33,33 @@ public class Adproccw {
 
     //
     public void validateAndAdd(String depth, String length, String height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, String cardGrade) {
-        //variables once inputed converted to ints
-        int giveDepth = 0;
-        int giveLength = 0;
-        int giveHeight = 0;
-        int giveCardGrade = 0;
-        int giveColour = 1;
 
-        addBoxToArray(giveDepth, giveLength, giveHeight, giveColour, reinforcedBottom, reinforcedCorners, giveCardGrade);
+        //THIS FUNCTION FOR TRYING TO ADD A BOX TO THE ARRAY, WILL GIVE ERROR MESSAGES
+        int givedepth = 0;
+        int givelength = 0;
+        int giveheight = 0;
+        int givecardGrade = 0;
+        try {
+            givedepth = Integer.parseInt(depth);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            givelength = Integer.parseInt(length);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            giveheight = Integer.parseInt(height);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        try {
+            givecardGrade = Integer.parseInt(cardGrade);
+        } catch (NumberFormatException e) {
+            //display error message!
+        }
+        addBoxToArray(givedepth, givelength, giveheight, colour, reinforcedBottom, reinforcedCorners, givecardGrade);
     }
 
     //create and add new boxes to the array
