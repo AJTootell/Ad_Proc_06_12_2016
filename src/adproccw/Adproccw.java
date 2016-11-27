@@ -14,29 +14,31 @@ import java.util.ArrayList;
 public class Adproccw {
     ArrayList<BasicBox> OrderBox = new ArrayList<BasicBox>();
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
     }
+    
+    //for every collection of boxes in the OrderBox array total the prices
     public double getTotalPrice() {
         double totalCost = 0.0;
         for (BasicBox item:OrderBox ){
+            //get the price of item and add it to the totalCost
               totalCost = totalCost + item.calculateCosts();
           }
         return totalCost;
     }
+    
+    //
     public void validateAndAdd(String depth, String length, String height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, String cardGrade) {
-        int givedepth = 0;
-        int givelength = 0;
-        int giveheight = 0;
-        int givecardGrade = 0;
+        int giveDepth = 0;
+        int giveLength = 0;
+        int giveHeight = 0;
+        int giveCardGrade = 0;
         
-        
-        
-        addBoxToArray(givedepth, givelength, giveheight, colour, reinforcedBottom, reinforcedCorners, givecardGrade);
+        addBoxToArray(giveDepth, giveLength, giveHeight, colour, reinforcedBottom, reinforcedCorners, giveCardGrade);
     }
+    
+    //
     public void addBoxToArray(int depth, int length, int height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, int cardGrade) {
         boolean allowedBox = false;
         if (depth > 199 && length > 199 && height > 199) {
