@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class Adproccw {
     ArrayList<BasicBox> OrderBox = new ArrayList<BasicBox>();
-
     /**
      * @param args the command line arguments
      */

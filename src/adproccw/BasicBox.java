@@ -17,7 +17,6 @@ public abstract class BasicBox {
     boolean sealableTop;
     int quantity;
     
-    
     public BasicBox() {
         
     }
