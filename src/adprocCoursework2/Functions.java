@@ -3,24 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package adproccw;
+package adprocCoursework2;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Dylan
  */
-public class Adproccw {
-
-
+public class Functions {
     ArrayList<BasicBox> OrderBox = new ArrayList();
-
-
-    public static void main(String[] args) {
-        UserInterface menu = new UserInterface();
-    }
-
     //for every collection of boxes in the OrderBox array total the prices
     public double getTotalPrice() {
         double totalCost = 0.0;
@@ -32,7 +26,7 @@ public class Adproccw {
     }
 
     //
-    public void validateAndAdd(String depth, String length, String height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, String cardGrade) {
+    public void validateAndAdd(String depth, String length, String height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, int cardGrade) {
 
         //THIS FUNCTION FOR TRYING TO ADD A BOX TO THE ARRAY, WILL GIVE ERROR MESSAGES
         int givedepth = 0;
@@ -42,22 +36,17 @@ public class Adproccw {
         try {
             givedepth = Integer.parseInt(depth);
         } catch (NumberFormatException e) {
-            //display error message!
+            errorMessage("Incorrect Depth value!");
         }
         try {
             givelength = Integer.parseInt(length);
         } catch (NumberFormatException e) {
-            //display error message!
+            errorMessage("Incorrect length value!");
         }
         try {
             giveheight = Integer.parseInt(height);
         } catch (NumberFormatException e) {
-            //display error message!
-        }
-        try {
-            givecardGrade = Integer.parseInt(cardGrade);
-        } catch (NumberFormatException e) {
-            //display error message!
+            errorMessage("Incorrect height value!");
         }
         addBoxToArray(givedepth, givelength, giveheight, colour, reinforcedBottom, reinforcedCorners, givecardGrade);
     }
@@ -65,7 +54,7 @@ public class Adproccw {
     //create and add new boxes to the array
     public void addBoxToArray(int depth, int length, int height, int colour, boolean reinforcedBottom, boolean reinforcedCorners, int cardGrade) {
         // box specified is within set dimensions
-        if (depth > 199 && length > 199 && height > 199) {
+        if ((depth > 199 && length > 199 && height > 199)&&(depth < 1001 && length < 1001 && height < 1001)) {
             // box specified matches boxType5 description
             if (reinforcedCorners == true && reinforcedBottom == true && colour == 2 && cardGrade > 2 && cardGrade < 6) {
                 BoxType5 newbox = new BoxType5(depth, length, height);
@@ -100,7 +89,10 @@ public class Adproccw {
             }
         }
         //if box not allowed err
-
-        System.out.println("NO");
+        errorMessage("Box not avalible");
+    }
+    public void errorMessage(String message) {
+        JFrame frame = new JFrame("Error");
+        JOptionPane.showMessageDialog(frame, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 }

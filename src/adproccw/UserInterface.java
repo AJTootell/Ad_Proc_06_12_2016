@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package adproccw;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -16,6 +20,7 @@ public class UserInterface extends javax.swing.JFrame {
      */
     public UserInterface() {
         initComponents();
+        //new UserInterface().setVisible(true);
     }
 
     /**
@@ -223,7 +228,8 @@ public class UserInterface extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserInterface().setVisible(true);
+                UserInterface help = new UserInterface();
+                help.setVisible(true);
             }
         });
     }
