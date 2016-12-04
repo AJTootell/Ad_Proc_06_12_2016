@@ -94,6 +94,10 @@ public abstract class Utility {
                 }
             }
         }
+        else{
+            errorMessage("Box dimensions not allowed");
+            return false;
+        }
         //if box not allowed err
         errorMessage("Box not avalible");
         return false;
