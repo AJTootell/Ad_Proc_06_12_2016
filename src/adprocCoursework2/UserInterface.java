@@ -318,10 +318,10 @@ public class UserInterface extends javax.swing.JFrame {
         length = lengthField.getText();
         depth = depthField.getText();
         height = heightField.getText();
-        Functions.validateAndAdd(length,depth,height,cardGrade,colours,reinforcedBottom,reinforcedCorners,sealableTop,quantity);
+        Utility.validateAndAdd(length,depth,height,cardGrade,colours,reinforcedBottom,reinforcedCorners,sealableTop,quantity);
         //why you no work???
         //DecimalFormat dp = new DecimalFormat("0.00");
-        costtext.setText(String.format("%.2f",Functions.getTotalPrice()));
+        costtext.setText(String.format("%.2f",Utility.getTotalPrice()));
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
