@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Dylan
  */
-public class Utility {
+public abstract class Utility {
     private static ArrayList<BasicBox> OrderBox = new ArrayList();
     //for every collection of boxes in the OrderBox array total the prices
     public static double getTotalPrice() {
