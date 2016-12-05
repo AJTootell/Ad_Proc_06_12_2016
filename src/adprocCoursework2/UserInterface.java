@@ -1,16 +1,9 @@
 package adprocCoursework2;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Dylan
+ * @author Dylan Tomkins, Keir James, Andrew Tootell
  */
 public class UserInterface extends javax.swing.JFrame {
 
@@ -298,10 +291,12 @@ public class UserInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Card Grade box changed, update varaible
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         cardGrade = Integer.parseInt(jComboBox1.getSelectedItem().toString());
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    //Colours Box changed, update variable
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         String temp = jComboBox2.getSelectedItem().toString();
        if (temp.equals("No Colours")) {
@@ -315,46 +310,49 @@ public class UserInterface extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    //get box lenghts, validate, add box to array, and calcualte new cost for all boxes in the array (order)
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         length = lengthField.getText();
         depth = depthField.getText();
         height = heightField.getText();
         Utility.validateAndAdd(length,depth,height,cardGrade,colours,reinforcedBottom,reinforcedCorners,sealableTop,quantity);
         costtext.setText(String.format("%.2f",Utility.getTotalPrice()));
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void lengthFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthFieldActionPerformed
-        length = lengthField.getText();
+
     }//GEN-LAST:event_lengthFieldActionPerformed
 
+    //update reinforced corners variable
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         reinforcedCorners = !reinforcedCorners;
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
+    //update reinforced bottom variable
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         reinforcedBottom = !reinforcedBottom;
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
+    //update sealed top variable
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         sealableTop = !sealableTop;
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
+    //update quantity picker variable and validate
     private void quantityPickerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_quantityPickerStateChanged
         quantity = (int) quantityPicker.getValue();
     }//GEN-LAST:event_quantityPickerStateChanged
 
     private void depthFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_depthFieldActionPerformed
-        depth = depthField.getText();
+
     }//GEN-LAST:event_depthFieldActionPerformed
 
     private void heightFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heightFieldActionPerformed
-         height = heightField.getText();
+
     }//GEN-LAST:event_heightFieldActionPerformed
 
     private void jComboBox1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBox1PropertyChange
-        cardGrade = Integer.parseInt(jComboBox1.getSelectedItem().toString());
+
     }//GEN-LAST:event_jComboBox1PropertyChange
 
     private void jComboBox2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBox2PropertyChange

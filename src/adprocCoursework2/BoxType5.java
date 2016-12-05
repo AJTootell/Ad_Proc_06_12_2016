@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package adprocCoursework2;
 /**
  *
- * @author Dylan
+ * @author Dylan Tomkins, Keir James, Andrew Tootell
  */
 public class BoxType5 extends BasicBox {
     public BoxType5(int depth, int length, int height, int cardGrade,boolean sealableTop, int quantity) {
